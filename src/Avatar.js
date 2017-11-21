@@ -26,6 +26,9 @@ export default class Avatar extends React.Component {
     if (this.props.renderAvatar === null) {
       return null
     }
+    if (this.props.renderAvatar && !this.props.renderAvatar()) {
+     return null;
+   }
 
     if (isSameUser(this.props.currentMessage, messageToCompare) && isSameDay(this.props.currentMessage, messageToCompare)) {
       return (
